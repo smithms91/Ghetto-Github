@@ -1,5 +1,10 @@
+"use strict";
+
 $(document).ready(() => {
-  $.get("https://www.reddit.com/r/mildlyinteresting/.json").then((data) => {
+
+  let page = prompt("Enter a subreddit!");
+
+  $.get(`https://www.reddit.com/r/${page}/.json`).then((data) => {
     for (let i = 0; i < 10; i++) {
       let info = data.data.children[i].data.title;
       let image = data.data.children[i].data.url;
@@ -28,5 +33,7 @@ $(document).ready(() => {
       </div>
       `);
     }
-  })
+  }).catch((err) => {
+      alert("bruh");
+  });
 })

@@ -81,6 +81,7 @@ body {
 .author {
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 .information {
